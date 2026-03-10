@@ -38,7 +38,9 @@ FDISK_COMMANDS="g\nn p\n1\n$(OFFSET)\n+$(FS_SIZE)M\nt 1\n1\nw"
 image : $(OS_DIR)/EFI/BOOT/BOOTX64.EFI
 
 run : $(DISK_IMAGE)
-	$(QEMU) -hda $(DISK_IMAGE)
+	$(QEMU) -machine q35 -m 256M \
+	-drive if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/x64/OVMF_CODE.4m.fd \
+	-drive format=raw,file=${DISK_IMAGE}
 
 clean :
 	rm -rf $(BUILD_DIR)
