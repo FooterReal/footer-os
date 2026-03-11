@@ -18,3 +18,18 @@ IDE: [Visual Studio Code](https://code.visualstudio.com)
 Assembler: [NASM](https://www.nasm.us)<br>
 Linker: [ld](https://linux.die.net/man/1/ld)<br>
 Build tool: [make](https://www.gnu.org/software/make/)<br>
+
+VM: [QEMU](https://www.qemu.org)<br>
+
+# Other requirements for build
+objcopy
+mkfs.vfat
+fdisk
+losetup
+sudo
+
+# Licenses
+The project itself is under the MIT license. However, due to the reliance on third-party libraries the following third-party licenses are present:
+
+GNU-EFI: libs/gnu-efi/LICENSE
+OVMF: libs/ovmf/License.txt
